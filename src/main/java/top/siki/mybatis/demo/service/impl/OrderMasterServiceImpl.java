@@ -31,7 +31,7 @@ public class OrderMasterServiceImpl extends ServiceImpl<OrderMasterMapper, Order
     @Override
     public IPage<OrderVO> getPage(Page page ,String name) {
         QueryWrapper<OrderMaster> queryWrapper = new QueryWrapper<>();
-        queryWrapper.select("t.buyer_name as product_name, t.order_id, a.product_name as buyer_name, b.product_price");
+        queryWrapper.select("t.buyer_name as product_name, t.order_id, t.create_time ,a.product_name as buyer_name, b.product_price");
         queryWrapper.like(StringUtils.isNotEmpty(name),"t.buyer_name" ,name);
         return orderMasterMapper.getAll(page , queryWrapper);
     }
