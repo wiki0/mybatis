@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.siki.mybatis.demo.mapper.OrderMasterMapper">
+
+    <select id="getAll" resultType="top.siki.mybatis.demo.vo.OrderVO">
+	SELECT ${ew.sqlSelect}
+	FROM order_master t
+	LEFT JOIN order_detail a ON t.order_id=a.order_id
+	LEFT JOIN product_info b ON a.product_id=b.product_id
+	${ew.customSqlSegment}
+    </select>
+</mapper>
