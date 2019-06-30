@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/spring_cloud?useUnicode=true&useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://118.24.109.186:3306/spring_cloud?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: root
     password: wiki5620
 logging:
